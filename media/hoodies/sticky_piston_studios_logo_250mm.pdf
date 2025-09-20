@@ -1,0 +1,101 @@
+%PDF-1.1
+1 0 obj
+<<
+    /Type /Catalog
+    /Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+    /Type /Pages
+    /Kids [ 5 0 R ]
+    /Count 1
+>>
+endobj
+3 0 obj
+<<
+    /Pattern <<
+        /P1 <<
+            /Type /Pattern
+            /PatternType 2
+            /Matrix [ -251.331 -644.035 -624.271 243.618 494.977 672.609 ]
+            /Shading 4 0 R
+        >>
+    >>
+>>
+endobj
+4 0 obj
+<<
+    /ShadingType 2
+    /ColorSpace /DeviceRGB
+    /Extend [ true true ]
+    /Function <<
+        /FunctionType 3
+        /Encode [ 1 0 1 0 0 1 0 1 ]
+        /Domain [ 0 1 ]
+        /Bounds [ 0.062 0.415 0.5 ]
+        /Functions [ <<
+                    /FunctionType 2
+                    /C0 [ 0.318 0.345 0.976 ]
+                    /C1 [ 0.318 0.345 0.976 ]
+                    /Domain [ 0 1 ]
+                    /N 1.109
+                >> <<
+                    /FunctionType 2
+                    /C0 [ 0.961 0.11 0.71 ]
+                    /C1 [ 0.318 0.345 0.976 ]
+                    /Domain [ 0 1 ]
+                    /N 1.109
+                >> <<
+                    /FunctionType 2
+                    /C0 [ 0.961 0.11 0.71 ]
+                    /C1 [ 1 0.11 0.737 ]
+                    /Domain [ 0 1 ]
+                    /N 1.659
+                >> <<
+                    /FunctionType 2
+                    /C0 [ 1 0.11 0.737 ]
+                    /C1 [ 1 0.753 0.086 ]
+                    /Domain [ 0 1 ]
+                    /N 1.26
+                >> ]
+    >>
+    /Coords [ 0 0 1 0 ]
+>>
+endobj
+5 0 obj
+<<
+    /Type /Page
+    /Parent 2 0 R
+    /Resources 3 0 R
+    /MediaBox [ 0 0 709 709 ]
+    /Annots [  ]
+    /Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+    /Filter /FlateDecode
+    /Length 138
+>>
+stream
+xœU;Â@D{N15Å°{½¾E®€"EHA"q}–h)Ÿ<o&°8¾¸÷u}|fŒK»#–qF1gÊP©´ˆ÷Î¢‘Á1!«P‘ªScÃä4ƒˆ³¤b”|dmóÎ½^ìÌµ9­ÊÛRgIŒ»l	qÛ±ÀgÇîö0’‹5<WÿÇğ¼^~ 4
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000066 00000 n 
+0000000137 00000 n 
+0000000363 00000 n 
+0000001488 00000 n 
+0000001631 00000 n 
+trailer
+<<
+    /Root 1 0 R
+    /Size 7
+>>
+startxref
+1849
+%%EOF
