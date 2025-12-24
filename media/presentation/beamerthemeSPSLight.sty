@@ -1,0 +1,118 @@
+\ProvidesPackage{beamerthemeSPSLight}[SPS Light Beamer Theme]
+
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{pgf} % for smooth gradient shading (beamer already brings pgf, but be explicit)
+
+\mode<presentation>
+
+% --- EXACT SPS colors ---
+\definecolor{SPSBlue}{HTML}{5556F7}
+\definecolor{SPSPink}{HTML}{FF1DBB}
+\definecolor{SPSOrange}{HTML}{FFB413}
+
+% --- Light neutrals ---
+\definecolor{SPSInk}{HTML}{111827}
+\definecolor{SPSGray}{HTML}{6B7280}
+\definecolor{SPSBorder}{HTML}{E5E7EB}
+\definecolor{SPSBg}{HTML}{FFFFFF}
+\definecolor{SPSBgAlt}{HTML}{F8FAFC}
+\definecolor{SPSCodeBg}{HTML}{F3F4F6}
+
+% Margins
+\setbeamersize{text margin left=10mm, text margin right=10mm}
+
+% Global colors
+\setbeamercolor{background canvas}{bg=SPSBg}
+\setbeamercolor{normal text}{fg=SPSInk,bg=SPSBg}
+\setbeamercolor{structure}{fg=SPSBlue}
+\setbeamercolor{alerted text}{fg=SPSPink}
+\setbeamercolor{example text}{fg=SPSOrange}
+
+\setbeamercolor{frametitle}{fg=SPSInk,bg=SPSBgAlt}
+\setbeamercolor{footline}{fg=SPSGray,bg=SPSBg}
+
+% Fonts
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{footline}{size=\scriptsize}
+
+% Blocks
+\setbeamercolor{block title}{fg=SPSInk,bg=SPSBlue!10}
+\setbeamercolor{block body}{fg=SPSInk,bg=SPSBg}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+% Lists
+\setbeamertemplate{itemize item}{\raise0.25ex\hbox{\scriptsize\color{SPSBlue}\textbullet}}
+\setbeamertemplate{itemize subitem}{\raise0.25ex\hbox{\tiny\color{SPSBlue}\textbullet}}
+\setbeamertemplate{enumerate item}{\color{SPSBlue}\insertenumlabel.}
+
+% No headline / no nav
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+
+% --- Smooth SPS gradient (Blue -> Pink -> Orange) ---
+\pgfdeclarehorizontalshading{SPSGradient}{1bp}{
+  color(0bp)=(SPSBlue);
+  color(0.5\paperwidth)=(SPSPink);
+  color(\paperwidth)=(SPSOrange)
+}
+\newcommand{\SPSGradientRule}[1]{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=#1,dp=0pt]{background canvas}%
+    \pgfuseshading{SPSGradient}%
+  \end{beamercolorbox}%
+}
+
+% --- Footer API ---
+\makeatletter
+\newcommand{\SPS@logo}{}
+\newcommand{\SPS@left}{}
+\newcommand{\SPS@center}{}
+\newcommand{\SPS@right}{}
+
+\newcommand{\SPSsetlogo}[1]{\renewcommand{\SPS@logo}{#1}}
+\newcommand{\SPSsetfooterleft}[1]{\renewcommand{\SPS@left}{#1}}
+\newcommand{\SPSsetfootercenter}[1]{\renewcommand{\SPS@center}{#1}}
+\newcommand{\SPSsetfooterright}[1]{\renewcommand{\SPS@right}{#1}}
+
+% Frametitile
+\defbeamertemplate*{frametitle}{SPSLight}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=3.2ex,dp=1.2ex,leftskip=1.2em,rightskip=1.2em]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle%
+  \end{beamercolorbox}%
+  \nointerlineskip%
+  \SPSGradientRule{0.9pt}%
+  \vspace{0.6ex}%
+}
+\setbeamertemplate{frametitle}[SPSLight]
+
+% Footline (THIS is the important bit: named template + activated)
+\defbeamertemplate*{footline}{SPSLight}{%
+  \leavevmode%
+  \vbox{%
+    \hbox{\color{SPSBorder}\rule{\paperwidth}{0.4pt}}%
+    \hbox{%
+      \begin{beamercolorbox}[wd=\paperwidth,ht=3.6ex,dp=1.4ex,leftskip=1em,rightskip=1em]{footline}%
+        \usebeamerfont{footline}\color{SPSGray}%
+        \begin{minipage}[c]{0.34\paperwidth}%
+          \raggedright%
+          \ifx\SPS@logo\@empty\else%
+            \IfFileExists{\SPS@logo}{\raisebox{-0.35ex}{\includegraphics[height=2.2ex]{\SPS@logo}}\hspace{0.6em}}{}%
+          \fi%
+          \SPS@left%
+        \end{minipage}%
+        \begin{minipage}[c]{0.32\paperwidth}%
+          \centering\SPS@center%
+        \end{minipage}%
+        \begin{minipage}[c]{0.30\paperwidth}%
+          \raggedleft\SPS@right\hspace{0.9em}\insertframenumber{} / \inserttotalframenumber%
+        \end{minipage}%
+      \end{beamercolorbox}%
+    }%
+  }%
+}
+\setbeamertemplate{footline}[SPSLight]
+\makeatother
+
+\mode<all>
+

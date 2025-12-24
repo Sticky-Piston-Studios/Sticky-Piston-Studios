@@ -1,0 +1,56 @@
+\documentclass[14pt,compress,usenames,dvipsnames,aspectratio=169]{beamer}
+
+\usetheme{SPSLight}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Footer: SPS details + logo
+\SPSsetlogo{figures/sticky_piston_studios_logo.png}
+\SPSsetfooterleft{\textbf{Sticky Piston Studios}}
+\SPSsetfootercenter{\href{https://stickypistonstudios.com/}{stickypistonstudios.com}}
+
+% Links in SPS Blue (exact)
+\hypersetup{colorlinks=true,urlcolor=SPSBlue,linkcolor=SPSBlue}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\scriptsize,
+  backgroundcolor=\color{SPSCodeBg},
+  frame=single,
+  rulecolor=\color{SPSBorder},
+  breaklines=true,
+  columns=fullflexible
+}
+
+\title{\textbf{Sticky is the way}}
+\author{Sp0nzip}
+\institute{ECS Mastery}
+\date{Paris, 3.10.25}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Agenda}
+\begin{itemize}
+  \item One
+  \item Two
+  \item Three
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Code example}
+\begin{lstlisting}[language=C]
+int add(int a, int b) {
+  return a + b;
+}
+\end{lstlisting}
+\end{frame}
+
+\end{document}
+
